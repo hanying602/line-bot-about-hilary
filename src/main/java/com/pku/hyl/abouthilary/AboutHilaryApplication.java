@@ -25,10 +25,10 @@ public class AboutHilaryApplication {
         String resultMessage = "";
         switch (originalMessageText) {
             case "我是蘇冠融":
-                resultMessage = "我愛你\\u{100037}";
+                resultMessage = "我愛你\\u{0x100037}";
                 break;
             case "我是姜佳宜":
-                resultMessage = "好想妳～可愛的姜佳宜\\u{100096}";
+                resultMessage = "好想妳～可愛的姜佳宜\\u{0x100096}";
                 break;
             default:
                 resultMessage = originalMessageText;
