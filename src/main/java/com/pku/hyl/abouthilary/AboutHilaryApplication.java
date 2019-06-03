@@ -22,12 +22,19 @@ public class AboutHilaryApplication {
     public Message handleTextMessageEvent(MessageEvent<TextMessageContent> event) {
         System.out.println("event: " + event);
         final String originalMessageText = event.getMessage().getText();
-//        final String
-        if (originalMessageText.equals("我是蘇冠融")){
-            return new TextMessage("我愛你");
-        }else {
-            return new TextMessage(originalMessageText);
+        String resultMessage = "";
+        switch (originalMessageText) {
+            case "我是蘇冠融":
+                resultMessage = "我愛你";
+                break;
+            case "我是姜佳宜":
+                resultMessage = "好想妳～可愛的姜佳宜(cony kiss)";
+                break;
+            default:
+                resultMessage = originalMessageText;
+                break;
         }
+        return new TextMessage(resultMessage);
     }
 
     @EventMapping
