@@ -28,7 +28,7 @@ public class AboutHilaryApplication {
                 resultMessage = "我愛你";
                 break;
             case "我是姜佳宜":
-                resultMessage = "好想妳～可愛的姜佳宜(cony kiss)";
+                resultMessage = "好想妳～可愛的姜佳宜\\u{100096}";
                 break;
             default:
                 resultMessage = originalMessageText;
