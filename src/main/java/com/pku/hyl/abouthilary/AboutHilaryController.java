@@ -61,26 +61,44 @@ public class AboutHilaryController {
         this.reply(replyToken, new TextMessage(message));
     }
 
-    private void handleTextContent(String replyToken, Event event, TextMessageContent content)
-            throws Exception {
+    private void handleTextContent(String replyToken, Event event, TextMessageContent content){
         String text = content.getText();
         switch (text) {
             case "學歷":
-                String imageUrl = createUri("/static/images/pku.jpg");
-                CarouselTemplate carouselTemplate = new CarouselTemplate(
+                String imageUrlPKU = createUri("/static/images/pku.jpg");
+                String imageUrlNTNU = createUri("/static/images/ntnu.jpg");
+                CarouselTemplate educationTemplate = new CarouselTemplate(
                         Arrays.asList(
-                                new CarouselColumn(imageUrl, "hoge", "fuga", Arrays.asList(
-                                        new URIAction("Go to line.me",
-                                                "https://line.me", null),
+                                new CarouselColumn(imageUrlPKU, "北京大學 2018-", "軟體工程研究所", Arrays.asList(
+                                        new PostbackAction("主修課程",
+                                                "研究所主修課程",
+                                                "軟體架構設計、——")
+//                                        ,new PostbackAction("Say hello1",
+//                                                "hello こんにちは")
+                                )),
+                                new CarouselColumn(imageUrlNTNU, "國立臺灣師範大學 2013-2017", "科技應用學系", Arrays.asList(
+                                        new PostbackAction("主修課程",
+                                                "大學主修課程",
+                                                "數據挖掘、——")
+//                                        ,new MessageAction("Say message",
+//                                                "Rice=米")
+                                ))
+                        ));
+                TemplateMessage educationMessage = new TemplateMessage("林函盈的學歷", educationTemplate);
+                this.reply(replyToken, educationMessage);
+                break;
+            case "經歷":
+                String imageUrlGtom = createUri("/static/images/ntnu.jpg");
+                String imageUrlLavarta = createUri("/static/images/pku.jpg");
+                CarouselTemplate experienceTemplate = new CarouselTemplate(
+                        Arrays.asList(
+                                new CarouselColumn(imageUrlGtom, "北京大學 2018-", "實習生", Arrays.asList(
                                         new URIAction("Go to line.me",
                                                 "https://line.me", null),
                                         new PostbackAction("Say hello1",
                                                 "hello こんにちは")
                                 )),
-                                new CarouselColumn(imageUrl, "hoge", "fuga", Arrays.asList(
-                                        new PostbackAction("言 hello2",
-                                                "hello こんにちは",
-                                                "hello こんにちは"),
+                                new CarouselColumn(imageUrlLavarta, "國立臺灣師範大學 2013-2017", "實習生", Arrays.asList(
                                         new PostbackAction("言 hello2",
                                                 "hello こんにちは",
                                                 "hello こんにちは"),
@@ -88,8 +106,8 @@ public class AboutHilaryController {
                                                 "Rice=米")
                                 ))
                         ));
-                TemplateMessage templateMessage = new TemplateMessage("Carousel alt text", carouselTemplate);
-                this.reply(replyToken, templateMessage);
+                TemplateMessage experienceMessage = new TemplateMessage("林函盈的經歷", experienceTemplate);
+                this.reply(replyToken, experienceMessage);
                 break;
             default:
                 replyText(replyToken, text);
