@@ -71,8 +71,8 @@ public class AboutHilaryController {
                                 new CarouselColumn(imageUrlPKU, "北京大學 2018-至今", "軟體工程研究所", Arrays.asList(
                                         new PostbackAction("主修課程",
                                                 "軟體架構設計、——",
-                                                "研究所主修課程",
-                                                "test")
+                                                "test",
+                                                null)
 //                                        ,new PostbackAction("Say hello1",
 //                                                "hello こんにちは")
                                 )),
@@ -80,7 +80,7 @@ public class AboutHilaryController {
                                         new PostbackAction("主修課程",
                                                 "資料結構、——",
                                                 "大學主修課程",
-                                                "test")
+                                                null)
 //                                        ,new MessageAction("Say message",
 //                                                "Rice=米")
                                 ))
