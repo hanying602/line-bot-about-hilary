@@ -40,9 +40,7 @@ public class AboutHilaryController {
     @EventMapping
     public void handlePostbackEvent(PostbackEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken,
-                "Got postback data " + event.getPostbackContent().getData() + ", param " + event
-                        .getPostbackContent().getParams().toString());
+        this.replyText(replyToken, event.getPostbackContent().getData());
     }
 
     private void reply(@NonNull String replyToken, @NonNull Message message) {
