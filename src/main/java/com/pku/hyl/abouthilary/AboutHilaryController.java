@@ -7,6 +7,7 @@ import com.linecorp.bot.model.action.PostbackAction;
 import com.linecorp.bot.model.action.URIAction;
 import com.linecorp.bot.model.event.Event;
 import com.linecorp.bot.model.event.MessageEvent;
+import com.linecorp.bot.model.event.PostbackEvent;
 import com.linecorp.bot.model.event.message.TextMessageContent;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TemplateMessage;
@@ -34,6 +35,14 @@ public class AboutHilaryController {
     public void handleTextMessageEvent(MessageEvent<TextMessageContent> event) throws Exception {
         TextMessageContent message = event.getMessage();
         handleTextContent(event.getReplyToken(), event, message);
+    }
+
+    @EventMapping
+    public void handlePostbackEvent(PostbackEvent event) {
+        String replyToken = event.getReplyToken();
+        this.replyText(replyToken,
+                "Got postback data " + event.getPostbackContent().getData() + ", param " + event
+                        .getPostbackContent().getParams().toString());
     }
 
     private void reply(@NonNull String replyToken, @NonNull Message message) {
@@ -71,7 +80,7 @@ public class AboutHilaryController {
                                 new CarouselColumn(imageUrlPKU, "北京大學 2018-至今", "軟體工程研究所", Arrays.asList(
                                         new PostbackAction("主修課程",
                                                 "軟體架構設計、——",
-                                                "test",
+                                                "研究所主修課程",
                                                 null)
 //                                        ,new PostbackAction("Say hello1",
 //                                                "hello こんにちは")
