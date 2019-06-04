@@ -2,7 +2,6 @@ package com.pku.hyl.abouthilary;
 
 import com.linecorp.bot.client.LineMessagingClient;
 import com.linecorp.bot.model.ReplyMessage;
-import com.linecorp.bot.model.action.DatetimePickerAction;
 import com.linecorp.bot.model.action.MessageAction;
 import com.linecorp.bot.model.action.PostbackAction;
 import com.linecorp.bot.model.action.URIAction;
@@ -65,8 +64,8 @@ public class AboutHilaryController {
         String text = content.getText();
         switch (text) {
             case "學歷":
-                String imageUrlPKU = createUri("/static/images/pku.png");
-                String imageUrlNTNU = createUri("/static/images/ntnu.png");
+                String imageUrlPKU = createUri("/static/images/pku.jpeg");
+                String imageUrlNTNU = createUri("/static/images/ntnu.jpeg");
                 CarouselTemplate educationTemplate = new CarouselTemplate(
                         Arrays.asList(
                                 new CarouselColumn(imageUrlPKU, "北京大學 2018-至今", "軟體工程研究所", Arrays.asList(
