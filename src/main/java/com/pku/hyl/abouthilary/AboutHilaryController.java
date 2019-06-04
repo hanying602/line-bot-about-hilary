@@ -65,21 +65,23 @@ public class AboutHilaryController {
         String text = content.getText();
         switch (text) {
             case "學歷":
-                String imageUrlPKU = createUri("/static/images/pku.jpg");
-                String imageUrlNTNU = createUri("/static/images/ntnu.jpg");
+                String imageUrlPKU = createUri("/static/images/pku.png");
+                String imageUrlNTNU = createUri("/static/images/ntnu.png");
                 CarouselTemplate educationTemplate = new CarouselTemplate(
                         Arrays.asList(
-                                new CarouselColumn(imageUrlPKU, "北京大學 2018-", "軟體工程研究所", Arrays.asList(
+                                new CarouselColumn(imageUrlPKU, "北京大學 2018-至今", "軟體工程研究所", Arrays.asList(
                                         new PostbackAction("主修課程",
+                                                "軟體架構設計、——",
                                                 "研究所主修課程",
-                                                "軟體架構設計、——")
+                                                "")
 //                                        ,new PostbackAction("Say hello1",
 //                                                "hello こんにちは")
                                 )),
                                 new CarouselColumn(imageUrlNTNU, "國立臺灣師範大學 2013-2017", "科技應用學系", Arrays.asList(
                                         new PostbackAction("主修課程",
+                                                "資料結構、——",
                                                 "大學主修課程",
-                                                "數據挖掘、——")
+                                                "")
 //                                        ,new MessageAction("Say message",
 //                                                "Rice=米")
                                 ))
