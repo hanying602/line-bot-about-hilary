@@ -75,7 +75,7 @@ public class AboutHilaryController {
                 String imageUrlNTNU = createUri("/static/images/ntnu.jpeg");
                 CarouselTemplate educationTemplate = new CarouselTemplate(
                         Arrays.asList(
-                                new CarouselColumn(imageUrlPKU, "北京大學 2018-至今", "軟體工程研究所", Arrays.asList(
+                                new CarouselColumn(imageUrlPKU, "北京大學", "2018 - 至今\n軟體工程研究所", Arrays.asList(
                                         new PostbackAction("主修課程",
                                                 "軟體架構設計、——",
                                                 "研究所主修課程",
@@ -83,7 +83,7 @@ public class AboutHilaryController {
 //                                        ,new PostbackAction("Say hello1",
 //                                                "hello こんにちは")
                                 )),
-                                new CarouselColumn(imageUrlNTNU, "國立臺灣師範大學 2013-2017", "科技應用學系", Arrays.asList(
+                                new CarouselColumn(imageUrlNTNU, "國立臺灣師範大學", "2013-2017\n科技應用學系", Arrays.asList(
                                         new PostbackAction("主修課程",
                                                 "資料結構、——",
                                                 "大學主修課程",
@@ -96,22 +96,21 @@ public class AboutHilaryController {
                 this.reply(replyToken, educationMessage);
                 break;
             case "經歷":
-                String imageUrlGtom = createUri("/static/images/ntnu.jpg");
+                String imageUrlGtcom = createUri("/static/images/ntnu.jpg");
                 String imageUrlLavarta = createUri("/static/images/pku.jpg");
                 CarouselTemplate experienceTemplate = new CarouselTemplate(
                         Arrays.asList(
-                                new CarouselColumn(imageUrlGtom, "中譯語通科技股份有限公司", " 2018.03-\n北京·實習生", Arrays.asList(
-                                        new URIAction("Go to line.me",
-                                                "https://line.me", null),
-                                        new PostbackAction("Say hello1",
-                                                "hello こんにちは")
+                                new CarouselColumn(imageUrlGtcom, "北京·中譯語通科技股份有限公司", " 2018.03 -\nAndroid實習生", Arrays.asList(
+                                        new URIAction("公司網站",
+                                                "http://www.gtcom.com.cn", null)
+//                                        new PostbackAction("Say hello1",
+//                                                "hello こんにちは")
                                 )),
-                                new CarouselColumn(imageUrlLavarta, "果子云數位科技有限公司", "2017.04-2018.08\n台北·實習生", Arrays.asList(
-                                        new PostbackAction("言 hello2",
-                                                "hello こんにちは",
-                                                "hello こんにちは"),
-                                        new MessageAction("Say message",
-                                                "Rice=米")
+                                new CarouselColumn(imageUrlLavarta, "台北·果子云數位科技有限公司", "2017.07 - 2018.08\nAndroid開發工程師\n2017.04 - 2017.06\nAndroid實習生", Arrays.asList(
+                                        new URIAction("公司網站",
+                                                "https://larvata.tw/", null)
+//                                        new MessageAction("Say message",
+//                                                "Rice=米")
                                 ))
                         ));
                 TemplateMessage experienceMessage = new TemplateMessage("林函盈的經歷", experienceTemplate);
