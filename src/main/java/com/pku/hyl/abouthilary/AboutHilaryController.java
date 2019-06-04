@@ -72,7 +72,7 @@ public class AboutHilaryController {
                                         new PostbackAction("主修課程",
                                                 "軟體架構設計、——",
                                                 "研究所主修課程",
-                                                "")
+                                                "test")
 //                                        ,new PostbackAction("Say hello1",
 //                                                "hello こんにちは")
                                 )),
@@ -80,7 +80,7 @@ public class AboutHilaryController {
                                         new PostbackAction("主修課程",
                                                 "資料結構、——",
                                                 "大學主修課程",
-                                                "")
+                                                "test")
 //                                        ,new MessageAction("Say message",
 //                                                "Rice=米")
                                 ))
@@ -93,13 +93,13 @@ public class AboutHilaryController {
                 String imageUrlLavarta = createUri("/static/images/pku.jpg");
                 CarouselTemplate experienceTemplate = new CarouselTemplate(
                         Arrays.asList(
-                                new CarouselColumn(imageUrlGtom, "北京大學 2018-", "實習生", Arrays.asList(
+                                new CarouselColumn(imageUrlGtom, "中譯語通科技股份有限公司", " 2018.03-\n北京·實習生", Arrays.asList(
                                         new URIAction("Go to line.me",
                                                 "https://line.me", null),
                                         new PostbackAction("Say hello1",
                                                 "hello こんにちは")
                                 )),
-                                new CarouselColumn(imageUrlLavarta, "國立臺灣師範大學 2013-2017", "實習生", Arrays.asList(
+                                new CarouselColumn(imageUrlLavarta, "果子云數位科技有限公司", "2017.04-2018.08\n台北·實習生", Arrays.asList(
                                         new PostbackAction("言 hello2",
                                                 "hello こんにちは",
                                                 "hello こんにちは"),
