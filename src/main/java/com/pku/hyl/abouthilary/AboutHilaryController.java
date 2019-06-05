@@ -79,8 +79,6 @@ public class AboutHilaryController {
                                                 "軟體架構設計、——",
                                                 "研究所主修課程",
                                                 null)
-//                                        ,new PostbackAction("Say hello1",
-//                                                "hello こんにちは")
                                 )),
                                 new CarouselColumn(imageUrlNTNU, "國立臺灣師範大學", "2013 - 2017\n科技應用學系", Arrays.asList(
                                         new PostbackAction("主修課程",
@@ -95,8 +93,8 @@ public class AboutHilaryController {
                 this.reply(replyToken, educationMessage);
                 break;
             case "經歷":
-                String imageUrlGtcom = createUri("/static/images/ntnu.jpg");
-                String imageUrlLarvata = createUri("/static/images/pku.jpg");
+                String imageUrlGtcom = createUri("/static/images/gtcom.png");
+                String imageUrlLarvata = createUri("/static/images/larvata.jpg");
                 CarouselTemplate experienceTemplate = new CarouselTemplate(
                         Arrays.asList(
                                 new CarouselColumn(imageUrlGtcom, "北京·中譯語通科技股份有限公司", "2018.03 - 至今\nAndroid實習生", Arrays.asList(
