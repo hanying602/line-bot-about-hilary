@@ -181,6 +181,46 @@ public class AboutHilaryController {
                         + "\uD83D\uDD38" + "月曆週曆的佈局顯示\n";
                 this.reply(replyToken, Arrays.asList(larvataProjectMessage, new TextMessage(larvataProjectText)));
                 break;
+            case "技能":
+                String skillText = String.valueOf(Character.toChars(0x100060)) + "DITEL通訊軟體\n"
+                        + "\uD83D\uDD38" + "運用WeRTC平台OpenTok完成視訊通話功能\n"
+                        + "\uD83D\uDD38" + "運用Google Firebase Database完成聊天功能\n"
+                        + "\uD83D\uDD38" + "運用Google FCM推送通知\n"
+                        + String.valueOf(Character.toChars(0x100060)) + "DIWORK團隊日曆\n"
+                        + "\uD83D\uDD38" + "使用okhttp大量串接API\n"
+                        + "\uD83D\uDD38" + "月曆週曆的佈局顯示\n";
+                replyText(replyToken, skillText);
+                break;
+            case "Side Projects":
+                String sideProjectsText = String.valueOf(Character.toChars(0x100060)) + "CircularMenuFloatingActionButton \n" +
+                        "Android mobile Application插件\n" +
+                        "\uD83D\uDD38浮動按鈕\n" +
+                        "\uD83D\uDD38User可以自定義多個子按鈕\n" +
+                        "\uD83D\uDD39Java\n" +
+                        "\uD83D\uDD39Android Studio\n" +
+                        "\uD83D\uDD39https://github.com/hanying602/CircularMenuFloatingActionButton"+
+                        String.valueOf(Character.toChars(0x100060))+"my-first-django-blog\n" +
+                        "Django框架Blog\n" +
+                        "\uD83D\uDD38登入後可新增和編輯貼文\n" +
+                        "\uD83D\uDD39Python\n" +
+                        "\uD83D\uDD39Pycharm\n" +
+                        "\uD83D\uDD39https://github.com/hanying602/my-first-django-blog"+
+                        String.valueOf(Character.toChars(0x100060))+"WX\n" +
+                        "Weather微信小程序\n" +
+                        "\uD83D\uDD38查看當前地區天氣\n" +
+                        "\uD83D\uDD38查看未來7天氣象預測\n" +
+                        "\uD83D\uDD39JavaScript\n" +
+                        "\uD83D\uDD39微信小程序Console\n" +
+                        "\uD83D\uDD39https://github.com/hanying602/WeixinLittleAp"+
+                        String.valueOf(Character.toChars(0x100060))+")SHLOVE\n" +
+                        "情侶互動iOS App\n" +
+                        "\uD83D\uDD38計算在一起的天數\n" +
+                        "\uD83D\uDD38紀錄未來想一起做和已經做過的事情\n" +
+                        "\uD83D\uDD39Objective C\n" +
+                        "\uD83D\uDD39Swift\n" +
+                        "\uD83D\uDD39https://github.com/hanying602/SHLOVE";
+                replyText(replyToken, sideProjectsText);
+                break;
             default:
                 replyText(replyToken, text);
                 break;
