@@ -69,7 +69,7 @@ public class AboutHilaryController {
         this.reply(replyToken, new TextMessage(message));
     }
 
-    private void handleTextContent(String replyToken, Event event, TextMessageContent content){
+    private void handleTextContent(String replyToken, Event event, TextMessageContent content) {
         String text = content.getText();
         switch (text) {
             case "學歷":
@@ -122,30 +122,37 @@ public class AboutHilaryController {
                 TemplateMessage experienceMessage = new TemplateMessage("林函盈的經歷", experienceTemplate);
                 this.reply(replyToken, experienceMessage);
                 break;
-            case "在中譯語通的負責項目": {
-                String imageUrl = createUri("/static/buttons/ntnu.jpg");
-                ImageCarouselTemplate imageCarouselTemplate = new ImageCarouselTemplate(
+            case "在中譯語通的負責項目":
+                String imageUrlLanguagebox = createUri("/static/images/languagebox.png");
+                ImageCarouselTemplate gtcomProjectTemplate = new ImageCarouselTemplate(
                         Arrays.asList(
-                                new ImageCarouselColumn(imageUrl,
-                                        new URIAction("公司網站",
-                                                "https://larvata.tw/", null)
-                                ),
-                                new ImageCarouselColumn(imageUrl,
-                                        new MessageAction("Say message",
-                                                "Rice=米")
-                                ),
-                                new ImageCarouselColumn(imageUrl,
-                                        new PostbackAction("主要職責",
-                                                "Android App維護開發、——",
-                                                "在果子云的職責",
-                                                null)
+                                new ImageCarouselColumn(imageUrlLanguagebox,
+                                        new URIAction("Learn more",
+                                                "http://www.gtcom.com.cn/?c=yeecloud&a=details&id=10", null)
                                 )
                         ));
-                TemplateMessage templateMessage = new TemplateMessage("林函盈在中譯語通的負責項目",
-                        imageCarouselTemplate);
-                this.reply(replyToken, templateMessage);
+                TemplateMessage gtcomProjectMessage = new TemplateMessage("林函盈在中譯語通的負責項目",
+                        gtcomProjectTemplate);
+                this.reply(replyToken, gtcomProjectMessage);
                 break;
-            }
+            case "在果子云的負責項目":
+                String imageUrlDitel = createUri("/static/images/ditel.png");
+                String imageUrlDiwork = createUri("/static/images/diwork.png");
+                ImageCarouselTemplate larvataProjectTemplate = new ImageCarouselTemplate(
+                        Arrays.asList(
+                                new ImageCarouselColumn(imageUrlDitel,
+                                        new URIAction("Learn more",
+                                                "http://ditel.com.tw", null)
+                                ),
+                                new ImageCarouselColumn(imageUrlDiwork,
+                                        new URIAction("Learn more",
+                                                "http://www.diwork.com.tw", null)
+                                )
+                        ));
+                TemplateMessage larvataProjectMessage = new TemplateMessage("林函盈在果子云的負責項目",
+                        larvataProjectTemplate);
+                this.reply(replyToken, larvataProjectMessage);
+                break;
             default:
                 replyText(replyToken, text);
                 break;
