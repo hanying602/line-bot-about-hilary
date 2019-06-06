@@ -76,6 +76,7 @@ public class AboutHilaryController {
             case "學歷":
                 String imageUrlPKU = createUri("/static/images/pku.jpg");
                 String imageUrlNTNU = createUri("/static/images/ntnu.jpg");
+                String imageUrlTFG = createUri("/static/images/tfg.jpg");
                 CarouselTemplate educationTemplate = new CarouselTemplate(
                         Arrays.asList(
                                 new CarouselColumn(imageUrlPKU, "北京大學", "2018 - 至今\n軟體工程研究所", Arrays.asList(
@@ -89,6 +90,12 @@ public class AboutHilaryController {
                                                 "資料結構、——",
                                                 "大學主修課程",
                                                 null)
+                                )),
+                                new CarouselColumn(imageUrlTFG, "臺北市立第一女子高級中學", "2014 - 2017\n普通科", Arrays.asList(
+//                                        new PostbackAction("主修課程",
+//                                                "資料結構、——",
+//                                                "大學主修課程",
+//                                                null)
                                 ))
                         ));
                 TemplateMessage educationMessage = new TemplateMessage("林函盈的學歷", educationTemplate);
@@ -100,20 +107,12 @@ public class AboutHilaryController {
                 CarouselTemplate experienceTemplate = new CarouselTemplate(
                         Arrays.asList(
                                 new CarouselColumn(imageUrlGtcom, "北京·中譯語通科技股份有限公司", "2018.03 - 至今\nAndroid實習生\nAndroid TV App維護與開發。", Arrays.asList(
-//                                        new PostbackAction("主要職責",
-//                                                "Android TV維護開發、——",
-//                                                "在中譯語通的職責",
-//                                                null),
                                         new MessageAction("參與項目",
                                                 "在中譯語通的負責項目"),
                                         new URIAction("公司網站",
                                                 "http://www.gtcom.com.cn", null)
                                 )),
                                 new CarouselColumn(imageUrlLarvata, "台北·果子云數位科技有限公司", "2017.07 - 2018.08\nAndroid開發工程師\nAndroid Mobile App維護與開發。", Arrays.asList(
-//                                        new PostbackAction("主要職責",
-//                                                "Android App維護開發、——",
-//                                                "在果子云的職責",
-//                                                null),
                                         new MessageAction("參與項目",
                                                 "在果子云的負責項目"),
                                         new URIAction("公司網站",
@@ -134,8 +133,11 @@ public class AboutHilaryController {
                         ));
                 TemplateMessage gtcomProjectMessage = new TemplateMessage("林函盈在中譯語通的負責項目",
                         gtcomProjectTemplate);
-                this.reply(replyToken, gtcomProjectMessage);
-                this.replyText(replyToken, text);
+                String gtcomProjectText = String.valueOf(Character.toChars(0x100060)) + "LanguageBox翻譯盒子\n"
+                        + "\uD83D\uDD38" + "實現GATT Server藍芽功能收發訊息讓移動裝置端能作為遙控器\n"
+                        + "\uD83D\uDD38" + "實現串接HDMI和Camera顯示畫面在Surface View上並且可以切換\n"
+                        + "\uD83D\uDD38" + "修改Bugs\n";
+                this.reply(replyToken, Arrays.asList(gtcomProjectMessage, new TextMessage(gtcomProjectText)));
                 break;
             case "在果子云的負責項目":
                 String imageUrlDitel = createUri("/static/images/ditel.png");
