@@ -12,7 +12,6 @@ import com.linecorp.bot.model.event.message.TextMessageContent;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TemplateMessage;
 import com.linecorp.bot.model.message.TextMessage;
-import com.linecorp.bot.model.message.flex.component.Text;
 import com.linecorp.bot.model.message.template.CarouselColumn;
 import com.linecorp.bot.model.message.template.CarouselTemplate;
 import com.linecorp.bot.model.message.template.ImageCarouselColumn;
@@ -79,15 +78,33 @@ public class AboutHilaryController {
                 String imageUrlTFG = createUri("/static/images/tfg.jpg");
                 CarouselTemplate educationTemplate = new CarouselTemplate(
                         Arrays.asList(
-                                new CarouselColumn(imageUrlPKU, "北京大學", "2018 - 至今\n軟體工程研究所", Arrays.asList(
+                                new CarouselColumn(imageUrlPKU, "北京大學", "2018 - 至今\n碩士·軟件工程所", Arrays.asList(
                                         new PostbackAction("主修課程",
-                                                "軟體架構設計、——",
+                                                "\uD83D\uDD38雲計算技術及應用\n" +
+                                                        "\uD83D\uDD38軟件體系結構與設計\n" +
+                                                        "\uD83D\uDD38數據挖掘及應用\n" +
+                                                        "\uD83D\uDD38推薦技術及應用\n" +
+                                                        "\uD83D\uDD38機器學習\n" +
+                                                        "\uD83D\uDD38人工智能實踐\n" +
+                                                        "\uD83D\uDD38移動平台應用軟件開發\n" +
+                                                        "\uD83D\uDD38數據分析工具實踐\n" +
+                                                        "\uD83D\uDD38計算機動畫",
                                                 "研究所主修課程",
                                                 null)
                                 )),
-                                new CarouselColumn(imageUrlNTNU, "國立臺灣師範大學", "2013 - 2017\n科技應用學系", Arrays.asList(
+                                new CarouselColumn(imageUrlNTNU, "國立臺灣師範大學", "2013 - 2017\n學士·科技應用學系", Arrays.asList(
                                         new PostbackAction("主修課程",
-                                                "資料結構、——",
+                                                "\uD83D\uDD38計算機概論\n" +
+                                                        "\uD83D\uDD38資料結構\n" +
+                                                        "\uD83D\uDD38作業系統\n" +
+                                                        "\uD83D\uDD38計算機結構\n" +
+                                                        "\uD83D\uDD38物件導向程式語言\n" +
+                                                        "\uD83D\uDD38電腦動畫\n" +
+                                                        "\uD83D\uDD38數位學習概論\n" +
+                                                        "\uD83D\uDD38多媒體教材設計與製作\n" +
+                                                        "\uD83D\uDD38微積分\n" +
+                                                        "\uD83D\uDD38虛擬實境設計\n" +
+                                                        "\uD83D\uDD38創造力開發",
                                                 "大學主修課程",
                                                 null)
                                 )),
