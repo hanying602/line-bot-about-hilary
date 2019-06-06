@@ -110,7 +110,8 @@ public class AboutHilaryController {
                                 )),
                                 new CarouselColumn(imageUrlTFG, "臺北市立第一女子高級中學", "2014 - 2017\n普通科", Arrays.asList(
                                         new PostbackAction(" ",
-                                                null,
+                                                "無",
+                                                "高中主修課程",
                                                 null)
                                 ))
                         ));
