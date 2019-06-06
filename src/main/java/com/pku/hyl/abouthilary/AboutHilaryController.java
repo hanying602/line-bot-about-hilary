@@ -153,15 +153,13 @@ public class AboutHilaryController {
                         ));
                 TemplateMessage larvataProjectMessage = new TemplateMessage("林函盈在果子云的負責項目",
                         larvataProjectTemplate);
-                String larvataProjectText = Character.toChars(0x100060) + "DITEL通訊軟體\n"
+                String larvataProjectText = String.valueOf(Character.toChars(0x100060)) + "DITEL通訊軟體\n"
                         + "\uD83D\uDD38" + "運用WeRTC平台OpenTok完成視訊通話功能\n"
                         + "\uD83D\uDD38" + "運用Google Firebase Database完成聊天功能\n"
                         + "\uD83D\uDD38" + "運用Google FCM推送通知\n"
-                        + Character.toChars(0x100060) + "DIWORK團隊日曆\n"
+                        + String.valueOf(Character.toChars(0x100060)) + "DIWORK團隊日曆\n"
                         + "\uD83D\uDD38" + "使用okhttp大量串接API\n"
                         + "\uD83D\uDD38" + "月曆週曆的佈局顯示\n";
-//                this.reply(replyToken, larvataProjectMessage);
-//                this.replyText(replyToken, larvataProjectText);
                 this.reply(replyToken, Arrays.asList(larvataProjectMessage, new TextMessage(larvataProjectText)));
                 break;
             default:
