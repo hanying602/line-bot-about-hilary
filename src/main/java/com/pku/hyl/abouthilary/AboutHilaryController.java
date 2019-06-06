@@ -193,27 +193,27 @@ public class AboutHilaryController {
                 break;
             case "Side Projects":
                 String sideProjectsText = String.valueOf(Character.toChars(0x100060)) + "Circular Menu Floating Action Button \n" +
-                        "Android mobile Application插件\n" +
+                        "\uD83D\uDD3AAndroid mobile Application插件\n" +
                         "\uD83D\uDD38浮動按鈕\n" +
                         "\uD83D\uDD38User可以自定義多個子按鈕\n" +
                         "\uD83D\uDD39Java\n" +
                         "\uD83D\uDD39Android Studio\n" +
                         "\uD83D\uDD39https://github.com/hanying602/CircularMenuFloatingActionButton\n"+
                         String.valueOf(Character.toChars(0x100060))+"my-first-django-blog\n" +
-                        "Django框架Blog\n" +
+                        "\uD83D\uDD3ADjango框架Blog\n" +
                         "\uD83D\uDD38登入後可新增和編輯貼文\n" +
                         "\uD83D\uDD39Python\n" +
                         "\uD83D\uDD39Pycharm\n" +
                         "\uD83D\uDD39https://github.com/hanying602/my-first-django-blog\n"+
                         String.valueOf(Character.toChars(0x100060))+"WX\n" +
-                        "Weather微信小程序\n" +
+                        "\uD83D\uDD3AWeather微信小程序\n" +
                         "\uD83D\uDD38查看當前地區天氣\n" +
                         "\uD83D\uDD38查看未來7天氣象預測\n" +
                         "\uD83D\uDD39JavaScript\n" +
                         "\uD83D\uDD39微信小程序Console\n" +
                         "\uD83D\uDD39https://github.com/hanying602/WeixinLittleApp\n"+
                         String.valueOf(Character.toChars(0x100060))+"SHLOVE\n" +
-                        "情侶互動iOS App\n" +
+                        "\uD83D\uDD3A情侶互動iOS App\n" +
                         "\uD83D\uDD38計算在一起的天數\n" +
                         "\uD83D\uDD38紀錄未來想一起做和已經做過的事情\n" +
                         "\uD83D\uDD39Objective C\n" +
