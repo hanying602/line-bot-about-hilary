@@ -92,10 +92,9 @@ public class AboutHilaryController {
                                                 null)
                                 )),
                                 new CarouselColumn(imageUrlTFG, "臺北市立第一女子高級中學", "2014 - 2017\n普通科", Arrays.asList(
-//                                        new PostbackAction("主修課程",
-//                                                "資料結構、——",
-//                                                "大學主修課程",
-//                                                null)
+                                        new PostbackAction("主修課程",
+                                                "無",
+                                                null)
                                 ))
                         ));
                 TemplateMessage educationMessage = new TemplateMessage("林函盈的學歷", educationTemplate);
