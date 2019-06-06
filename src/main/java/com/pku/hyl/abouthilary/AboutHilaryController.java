@@ -160,8 +160,9 @@ public class AboutHilaryController {
                         + Character.toChars(0x100060) + "DIWORK團隊日曆\n"
                         + "\uD83D\uDD38" + "使用okhttp大量串接API\n"
                         + "\uD83D\uDD38" + "月曆週曆的佈局顯示\n";
-                this.reply(replyToken, larvataProjectMessage);
-                this.replyText(replyToken, larvataProjectText);
+//                this.reply(replyToken, larvataProjectMessage);
+//                this.replyText(replyToken, larvataProjectText);
+                this.reply(replyToken, Arrays.asList(larvataProjectMessage, new TextMessage(larvataProjectText)));
                 break;
             default:
                 replyText(replyToken, text);
