@@ -12,6 +12,7 @@ import com.linecorp.bot.model.event.message.TextMessageContent;
 import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.model.message.TemplateMessage;
 import com.linecorp.bot.model.message.TextMessage;
+import com.linecorp.bot.model.message.flex.component.Text;
 import com.linecorp.bot.model.message.template.CarouselColumn;
 import com.linecorp.bot.model.message.template.CarouselTemplate;
 import com.linecorp.bot.model.message.template.ImageCarouselColumn;
@@ -98,22 +99,22 @@ public class AboutHilaryController {
                 String imageUrlLarvata = createUri("/static/images/larvata.jpg");
                 CarouselTemplate experienceTemplate = new CarouselTemplate(
                         Arrays.asList(
-                                new CarouselColumn(imageUrlGtcom, "北京·中譯語通科技股份有限公司", "2018.03 - 至今\nAndroid實習生", Arrays.asList(
-                                        new PostbackAction("主要職責",
-                                                "Android TV維護開發、——",
-                                                "在中譯語通的職責",
-                                                null),
-                                        new MessageAction("負責項目",
+                                new CarouselColumn(imageUrlGtcom, "北京·中譯語通科技股份有限公司", "2018.03 - 至今\nAndroid實習生\nAndroid TV App維護與開發。", Arrays.asList(
+//                                        new PostbackAction("主要職責",
+//                                                "Android TV維護開發、——",
+//                                                "在中譯語通的職責",
+//                                                null),
+                                        new MessageAction("參與項目",
                                                 "在中譯語通的負責項目"),
                                         new URIAction("公司網站",
                                                 "http://www.gtcom.com.cn", null)
                                 )),
-                                new CarouselColumn(imageUrlLarvata, "台北·果子云數位科技有限公司", "2017.07 - 2018.08\nAndroid開發工程師", Arrays.asList(
-                                        new PostbackAction("主要職責",
-                                                "Android App維護開發、——",
-                                                "在果子云的職責",
-                                                null),
-                                        new MessageAction("負責項目",
+                                new CarouselColumn(imageUrlLarvata, "台北·果子云數位科技有限公司", "2017.07 - 2018.08\nAndroid開發工程師\nAndroid Mobile App維護與開發。", Arrays.asList(
+//                                        new PostbackAction("主要職責",
+//                                                "Android App維護開發、——",
+//                                                "在果子云的職責",
+//                                                null),
+                                        new MessageAction("參與項目",
                                                 "在果子云的負責項目"),
                                         new URIAction("公司網站",
                                                 "https://larvata.tw/", null)
@@ -134,6 +135,7 @@ public class AboutHilaryController {
                 TemplateMessage gtcomProjectMessage = new TemplateMessage("林函盈在中譯語通的負責項目",
                         gtcomProjectTemplate);
                 this.reply(replyToken, gtcomProjectMessage);
+                this.replyText(replyToken, text);
                 break;
             case "在果子云的負責項目":
                 String imageUrlDitel = createUri("/static/images/ditel.png");
@@ -151,7 +153,15 @@ public class AboutHilaryController {
                         ));
                 TemplateMessage larvataProjectMessage = new TemplateMessage("林函盈在果子云的負責項目",
                         larvataProjectTemplate);
+                String larvataProjectText = Character.toChars(0x100060) + "DITEL通訊軟體\n"
+                        + "\uD83D\uDD38" + "運用WeRTC平台OpenTok完成視訊通話功能\n"
+                        + "\uD83D\uDD38" + "運用Google Firebase Database完成聊天功能\n"
+                        + "\uD83D\uDD38" + "運用Google FCM推送通知\n"
+                        + Character.toChars(0x100060) + "DIWORK團隊日曆\n"
+                        + "\uD83D\uDD38" + "使用okhttp大量串接API\n"
+                        + "\uD83D\uDD38" + "月曆週曆的佈局顯示\n";
                 this.reply(replyToken, larvataProjectMessage);
+                this.replyText(replyToken, larvataProjectText);
                 break;
             default:
                 replyText(replyToken, text);
