@@ -2,6 +2,7 @@ package com.pku.hyl.abouthilary;
 
 import com.linecorp.bot.client.LineMessagingClient;
 import com.linecorp.bot.model.ReplyMessage;
+import com.linecorp.bot.model.action.MessageAction;
 import com.linecorp.bot.model.action.PostbackAction;
 import com.linecorp.bot.model.action.URIAction;
 import com.linecorp.bot.model.event.Event;
@@ -13,6 +14,8 @@ import com.linecorp.bot.model.message.TemplateMessage;
 import com.linecorp.bot.model.message.TextMessage;
 import com.linecorp.bot.model.message.template.CarouselColumn;
 import com.linecorp.bot.model.message.template.CarouselTemplate;
+import com.linecorp.bot.model.message.template.ImageCarouselColumn;
+import com.linecorp.bot.model.message.template.ImageCarouselTemplate;
 import com.linecorp.bot.model.response.BotApiResponse;
 import com.linecorp.bot.spring.boot.annotation.EventMapping;
 import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
@@ -85,8 +88,6 @@ public class AboutHilaryController {
                                                 "資料結構、——",
                                                 "大學主修課程",
                                                 null)
-//                                        ,new MessageAction("Say message",
-//                                                "Rice=米")
                                 ))
                         ));
                 TemplateMessage educationMessage = new TemplateMessage("林函盈的學歷", educationTemplate);
@@ -102,6 +103,8 @@ public class AboutHilaryController {
                                                 "Android TV維護開發、——",
                                                 "在中譯語通的職責",
                                                 null),
+                                        new MessageAction("負責項目",
+                                                "在中譯語通的負責項目"),
                                         new URIAction("公司網站",
                                                 "http://www.gtcom.com.cn", null)
                                 )),
@@ -110,6 +113,8 @@ public class AboutHilaryController {
                                                 "Android App維護開發、——",
                                                 "在果子云的職責",
                                                 null),
+                                        new MessageAction("負責項目",
+                                                "在果子云的負責項目"),
                                         new URIAction("公司網站",
                                                 "https://larvata.tw/", null)
                                 ))
@@ -117,6 +122,30 @@ public class AboutHilaryController {
                 TemplateMessage experienceMessage = new TemplateMessage("林函盈的經歷", experienceTemplate);
                 this.reply(replyToken, experienceMessage);
                 break;
+            case "在中譯語通的負責項目": {
+                String imageUrl = createUri("/static/buttons/ntnu.jpg");
+                ImageCarouselTemplate imageCarouselTemplate = new ImageCarouselTemplate(
+                        Arrays.asList(
+                                new ImageCarouselColumn(imageUrl,
+                                        new URIAction("公司網站",
+                                                "https://larvata.tw/", null)
+                                ),
+                                new ImageCarouselColumn(imageUrl,
+                                        new MessageAction("Say message",
+                                                "Rice=米")
+                                ),
+                                new ImageCarouselColumn(imageUrl,
+                                        new PostbackAction("主要職責",
+                                                "Android App維護開發、——",
+                                                "在果子云的職責",
+                                                null)
+                                )
+                        ));
+                TemplateMessage templateMessage = new TemplateMessage("林函盈在中譯語通的負責項目",
+                        imageCarouselTemplate);
+                this.reply(replyToken, templateMessage);
+                break;
+            }
             default:
                 replyText(replyToken, text);
                 break;
