@@ -153,7 +153,7 @@ public class AboutHilaryController {
                 String gtcomProjectText = String.valueOf(Character.toChars(0x100060)) + "LanguageBox翻譯盒子\n"
                         + "\uD83D\uDD38" + "實現GATT Server藍芽功能收發訊息讓移動裝置端能作為遙控器\n"
                         + "\uD83D\uDD38" + "實現串接HDMI和Camera顯示畫面在Surface View上並且可以切換\n"
-                        + "\uD83D\uDD38" + "修改Bugs\n";
+                        + "\uD83D\uDD38" + "修改Bugs";
                 this.reply(replyToken, Arrays.asList(gtcomProjectMessage, new TextMessage(gtcomProjectText)));
                 break;
             case "在果子云的負責項目":
@@ -178,17 +178,19 @@ public class AboutHilaryController {
                         + "\uD83D\uDD38" + "運用Google FCM推送通知\n"
                         + String.valueOf(Character.toChars(0x100060)) + "DIWORK團隊日曆\n"
                         + "\uD83D\uDD38" + "使用okhttp大量串接API\n"
-                        + "\uD83D\uDD38" + "月曆週曆的佈局顯示\n";
+                        + "\uD83D\uDD38" + "月曆週曆的佈局顯示";
                 this.reply(replyToken, Arrays.asList(larvataProjectMessage, new TextMessage(larvataProjectText)));
                 break;
             case "技能":
-                String skillText = String.valueOf(Character.toChars(0x100060)) + "DITEL通訊軟體\n"
-                        + "\uD83D\uDD38" + "運用WeRTC平台OpenTok完成視訊通話功能\n"
-                        + "\uD83D\uDD38" + "運用Google Firebase Database完成聊天功能\n"
-                        + "\uD83D\uDD38" + "運用Google FCM推送通知\n"
-                        + String.valueOf(Character.toChars(0x100060)) + "DIWORK團隊日曆\n"
-                        + "\uD83D\uDD38" + "使用okhttp大量串接API\n"
-                        + "\uD83D\uDD38" + "月曆週曆的佈局顯示\n";
+                String skillText = String.valueOf(Character.toChars(0x100060)) + "程式语言\n" +
+                        "\uD83D\uDD38熟練：Java SE\n" +
+                        "\uD83D\uDD38略懂：Python、C#、Objective C\n" +
+                        String.valueOf(Character.toChars(0x100060))+"資料庫\n" +
+                        "\uD83D\uDD38SQLite、Realm\n" +
+                        String.valueOf(Character.toChars(0x100060))+"版本控制\n" +
+                        "\uD83D\uDD38Git、SourceTree\n" +
+                        String.valueOf(Character.toChars(0x100060))+"開發工具\n" +
+                        "\uD83D\uDD38Android Studio、Visual Studio、Pycharm、Swift";
                 replyText(replyToken, skillText);
                 break;
             case "Side Projects":
